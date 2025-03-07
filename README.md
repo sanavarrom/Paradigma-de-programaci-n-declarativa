@@ -1,0 +1,1 @@
+# Paradigma-de-programaci-n-declarativa
