@@ -3,11 +3,11 @@ import random
 # Lista de colores disponibles
 colores = ["rojo", "azul", "verde", "amarillo", "morado", "naranja", "cian", "turquesa"]
 
-# Generar una lista de 10 colores aleatorios
-colores_aleatorios = random.choices(colores, k=10)
+# Generar una lista de 5 colores aleatorios sin repetir
+colores_aleatorios = random.sample(colores, k=5)
 
 # Filtrar solo los colores fríos (declarativo)
-colores_frios = list(filter(lambda color: color in ["azul", "verde", "cian", "turquesa"], colores_aleatorios))
+colores_frios = list(filter(lambda color: color in {"azul", "verde", "cian", "turquesa"}, colores_aleatorios))
 
 # Mostrar resultados
 print("Lista de colores generados:", colores_aleatorios)
