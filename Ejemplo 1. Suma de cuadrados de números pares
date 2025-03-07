@@ -1,0 +1,16 @@
+from functools import reduce
+
+# Lista de números de ejemplo
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Programación declarativa: Filtrar los números pares
+numeros_pares = filter(lambda x: x % 2 == 0, numeros)
+
+# Elevar al cuadrado cada número par
+cuadrados = map(lambda x: x**2, numeros_pares)
+
+# Sumar todos los cuadrados obtenidos
+resultado = reduce(lambda x, y: x + y, cuadrados)
+
+# Mostrar el resultado final
+print("La suma de los cuadrados de los números pares es:", resultado)
