@@ -1,0 +1,28 @@
+import pandas as pd
+import random
+
+# Generar nombres aleatorios
+nombres = ["Ana", "Luis", "Carlos", "María", "Elena", "Javier", "Sofía", "Fernando", "Lucía", "Andrés"]
+
+# Crear datos aleatorios para 10 empleados
+data = {
+    "Nombre": random.choices(nombres, k=10),  # Elegir nombres aleatoriamente
+    "Edad": [random.randint(20, 60) for _ in range(10)],  # Edades entre 20 y 60 años
+    "Salario": [random.randint(2000, 8000) for _ in range(10)]  # Salarios entre 2000 y 8000
+}
+
+# Crear DataFrame con los datos
+df = pd.DataFrame(data)
+
+# Filtrar empleados con salario mayor a 5000
+empleados_bien_pagados = df[df["Salario"] > 5000]
+
+# Calcular la edad promedio de estos empleados
+edad_promedio = empleados_bien_pagados["Edad"].mean()
+
+# Mostrar los datos y el resultado
+print("Lista de empleados:")
+print(df)
+print("\nEmpleados con salario mayor a 5000:")
+print(empleados_bien_pagados)
+print("\nEdad promedio de empleados con salario mayor a 5000:", edad_promedio)
